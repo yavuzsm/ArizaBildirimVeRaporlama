@@ -1,0 +1,32 @@
+1-Departman
+id,departman_name
+
+2-Bölüm
+bölümId,bolum_name,departman_id
+
+3-Cihaz
+cihazId,cihaz_name,bolumId
+
+4-Rapor
+raporId,cihazId,bolumId,departmanId,arýzaturId,arýzakýsatanýmId
+
+5-Arýza Türü
+arýzaturId,name
+
+6-Arýza Kýsa Taným
+arýzakýsatanýmId,name
+
+7-User
+userId,name,password,mail
+
+8-Statü
+statuId,name,rapor_id
+
+9-Rol Tablosu
+roleId,roleName
+
+10-Teþhis
+teshisId,teshisName,rapor_id
+
+11-Aktivite
+aktiviteId,name,rapor_id

@@ -1,0 +1,7 @@
+﻿@model IEnumerable<SelectListItem>
+
+@foreach (var cihaz in Model)
+{
+    <option value="@cihaz.Value">@cihaz.Text</option>
+
+}

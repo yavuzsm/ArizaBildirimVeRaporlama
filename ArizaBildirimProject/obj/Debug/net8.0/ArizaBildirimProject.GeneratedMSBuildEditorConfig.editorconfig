@@ -1,0 +1,159 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ArizaBildirimProject
+build_property.RootNamespace = ArizaBildirimProject
+build_property.ProjectDir = C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Bolums/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sdW1zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Bolums/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sdW1zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Bolums/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sdW1zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Bolums/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sdW1zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Bolums/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9sdW1zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Cihazs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2loYXpzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Cihazs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2loYXpzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Cihazs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2loYXpzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Cihazs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2loYXpzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Cihazs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2loYXpzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Departmen/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVuXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Departmen/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVuXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Departmen/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVuXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Departmen/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVuXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Departmen/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVuXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Rapors/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFwb3JzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Rapors/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFwb3JzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Rapors/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFwb3JzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Rapors/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFwb3JzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Rapors/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFwb3JzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Rapors/_ArizaKisaTanimlarOptions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFwb3JzXF9Bcml6YUtpc2FUYW5pbWxhck9wdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Rapors/_BolumOption.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFwb3JzXF9Cb2x1bU9wdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Rapors/_CihazOptions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFwb3JzXF9DaWhhek9wdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Rapors/_EmptyPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFwb3JzXF9FbXB0eVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/ArizaBildirim/ArizaBildirimProject/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-kuhfgen4ls

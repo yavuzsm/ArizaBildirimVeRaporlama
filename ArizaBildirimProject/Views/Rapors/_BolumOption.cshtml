@@ -1,0 +1,11 @@
+﻿
+
+@model IEnumerable<SelectListItem>
+
+@foreach (var bolum in Model)
+{
+    <option value="@bolum.Value">@bolum.Text</option>
+
+}
+
+

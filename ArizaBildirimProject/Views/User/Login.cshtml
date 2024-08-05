@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="post" action="@Url.Action("Login", "User")">
+            <div>
+                <label>Username</label>
+                <input type="text" name="username" required />
+            </div>
+            <div>
+                <label>Password</label>
+                <div style="position: relative;">
+                    <input type="password" id="password" name="password" required />
+                    <span id="togglePassword" title="Şifreyi göster" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                        &#128065; <!-- göz simgesi -->
+                    </span>
+                </div>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+
+        @if (ViewData.ModelState.Values.Any(v => v.Errors.Any()))
+        {
+            <div style="color: red; margin-top: 10px;">
+                @string.Join("<br/>", ViewData.ModelState.Values
+                         .SelectMany(v => v.Errors)
+                         .Select(e => e.ErrorMessage))
+            </div>
+        }
+
+        <div style="margin-top: 20px;">
+            <span>Don't have an account?</span>
+            <a href="@Url.Action("Register", "User")" class="btn btn-secondary" style="margin-left: 10px;">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function (e) {
+            const password = document.getElementById('password');
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '&#128065;' : '&#128586;'; 
+            this.title = type === 'password' ? 'Şifreyi göster' : 'Şifreyi gizle'; 
+        });
+    </script>
+</body>
+</html>

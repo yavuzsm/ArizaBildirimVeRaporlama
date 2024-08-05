@@ -1,0 +1,120 @@
+﻿@model ArizaBildirimProject.Models.RegisterViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+            background-color: #f1ffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+            .register-container h2 {
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: #333;
+            }
+
+            .register-container div {
+                margin-bottom: 15px;
+            }
+
+            .register-container label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #555;
+            }
+
+            .register-container input[type="text"],
+            .register-container input[type="email"],
+            .register-container input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            .register-container button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+                .register-container button:hover {
+                    background-color: #0056b3;
+                }
+
+        .text-danger {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+    <title>Register</title>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form method="post" action="@Url.Action("Register", "User")">
+            <div>
+                <label asp-for="Username">Username</label>
+                <input type="text" name="Username" asp-for="Username" required />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Email">Email</label>
+                <input type="email" name="Email" asp-for="Email" required />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Password">Password</label>
+                <input type="password" name="Password" asp-for="Password" required />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="ConfirmPassword">Confirm Password</label>
+                <input type="password" name="ConfirmPassword" asp-for="ConfirmPassword" required />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+
+        @if (ViewData.ModelState.Values.Any(v => v.Errors.Any()))
+        {
+            <div style="color: red; margin-top: 10px;">
+                @string.Join("<br/>", ViewData.ModelState.Values
+                         .SelectMany(v => v.Errors)
+                         .Select(e => e.ErrorMessage))
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿@model ArizaBildirimProject.Models.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Bir hata oluştu.</h1>
+<h2 class="text-danger">İşlem sırasında bir hata oluştu.</h2>
+
+@if (Model?.ShowRequestId == true)
+{
+    <p>
+        <strong>İstek Kimliği:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<p>
+    <a asp-controller="Home" asp-action="Index">Anasayfa'ya dön</a>
+</p>

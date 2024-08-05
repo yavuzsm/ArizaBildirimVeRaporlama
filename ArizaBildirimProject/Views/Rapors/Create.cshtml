@@ -1,0 +1,117 @@
+﻿@model ArizaBildirimProject.Models.Rapor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Rapor Oluştur</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="DepartmentId">Departman</label>
+        <select id="DepartmentId" name="DepartmanId" class="form-control" onchange="fetchBolums(this.value)">
+            <option value="">-- Seçiniz --</option>
+            @foreach (var department in ViewBag.Departments)
+            {
+                <option value="@department.Value">@department.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="BolumId">Bölüm</label>
+        <select id="BolumId" name="BolumId" class="form-control" onchange="fetchCihazlar(this.value)">
+            <option value="">-- Seçiniz --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="CihazId">Cihaz</label>
+        <select id="CihazId" name="CihazId" class="form-control">
+            <option value="">-- Seçiniz --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ArizaTurId">Arıza Türü</label>
+        <select id="ArizaTurId" name="ArizaTurId" class="form-control" onchange="fetchAkt(this.value)">
+            <option value="">-- Seçiniz --</option>
+            @foreach (var arizaTur in ViewBag.ArizaTurler)
+            {
+                <option value="@arizaTur.Value">@arizaTur.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ArizaKisaTanimId">Arıza Kısa Tanımı</label>
+        <select id="ArizaKisaTanimId" name="ArizaKisaTanimId" class="form-control">
+            <option value="">-- Seçiniz --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Raporla</button>
+</form>
+
+@section Scripts {
+    <script type="text/javascript">
+        function fetchBolums(departmentId) {
+            if (!departmentId) {
+                $('#BolumId').empty().append('<option value="">-- Seçiniz --</option>');
+                $('#CihazId').empty().append('<option value="">-- Seçiniz --</option>');
+                return;
+            }
+
+            $.ajax({
+                url: '@Url.Action("GetBolumsByDepartment", "Rapors")',
+                type: 'GET',
+                data: { departmentId: departmentId },
+                success: function (data) {
+                    $('#BolumId').html(data);
+                    $('#CihazId').empty().append('<option value="">-- Seçiniz --</option>');
+                },
+                error: function (xhr, status, error) {
+                    console.error('Bölümler getirilirken bir hata oluştu:', xhr.responseText, 'Durum:', status, 'Hata:', error);
+                }
+            });
+        }
+
+        function fetchCihazlar(bolumId) {
+            if (!bolumId) {
+                $('#CihazId').empty().append('<option value="">-- Seçiniz --</option>');
+                return;
+            }
+
+            $.ajax({
+                url: '@Url.Action("GetCihazsByBolum", "Rapors")',
+                type: 'GET',
+                data: { bolumId: bolumId },
+                success: function (data) {
+                    $('#CihazId').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error('Cihazlar getirilirken bir hata oluştu:', xhr.responseText, 'Durum:', status, 'Hata:', error);
+                }
+            });
+        }
+
+        function fetchAkt(arizaTurId) {
+            if (!arizaTurId) {
+                $('#ArizaKisaTanimId').empty().append('<option value="">-- Seçiniz --</option>');
+                return;
+            }
+
+            $.ajax({
+                url: '@Url.Action("GetArizaKisaTanimlar", "Rapors")',
+                type: 'GET',
+                data: { arizaTurId: arizaTurId },
+                success: function (data) {
+                    $('#ArizaKisaTanimId').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error('Arıza Kısa Tanımları getirilirken bir hata oluştu:', xhr.responseText, 'Durum:', status, 'Hata:', error);
+                }
+            });
+        }
+    </script>
+}
