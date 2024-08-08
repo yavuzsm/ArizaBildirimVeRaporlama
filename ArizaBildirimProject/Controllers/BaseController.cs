@@ -4,6 +4,8 @@ using ArizaBildirimProject.Models;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ArizaBildirimProject.Data;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 
 namespace ArizaBildirimProject.Controllers
@@ -16,7 +18,23 @@ namespace ArizaBildirimProject.Controllers
         {
             _context = context;
         }
+        protected async Task<IActionResult> Paginate<T>(
+       IQueryable<T> query,
+       int? page,
+       int pageSize = 8,
+       string viewName = null) where T : class
+        {
+            int pageNumber = page ?? 1;
 
+            var pagedList = await Task.FromResult(query.ToPagedList(pageNumber, pageSize));
+
+            if (viewName == null)
+            {
+                return View(pagedList);
+            }
+
+            return View(viewName, pagedList);
+        }
         protected IActionResult NotFoundView(string entityName)
         {
             ViewData["ErrorMessage"] = $"{entityName} bulunamadı.";

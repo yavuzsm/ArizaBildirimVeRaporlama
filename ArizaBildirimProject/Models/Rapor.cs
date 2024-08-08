@@ -33,6 +33,15 @@ namespace ArizaBildirimProject.Models
         public int ArizaTurId { get; set; }
 
         public ArizaTur? ArizaTur { get; set; }
+
+        [Required]
+        public int StatuId { get; set; }
+        public Statu? Statu { get; set; }
+
+        [Required]
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        public DateTime? UpdatedAt { get; set; }
     }
 
 }

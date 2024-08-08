@@ -1,22 +1,55 @@
+/* site.css */
+
+/* Sidebar background color */
+.bg-dark {
+    background-color: #343a40 !important; /* Koyu gri arka plan */
+}
+
+/* Sidebar link colors */
+.nav-link {
+    color: #dcdcdc !important; /* Açýk gri metin rengi */
+}
+
+    .nav-link:hover {
+        color: #ffffff !important; /* Hover durumunda beyaz metin */
+    }
+
+    .nav-link.active {
+        color: #007bff !important; /* Aktif durumda mavi metin */
+    }
+
+    /* Icon alignment */
+    .nav-link .bi, .nav-link ion-icon {
+        vertical-align: middle !important;
+    }
+
+/* General link styling */
+.nav-pills .nav-link {
+    border-radius: 0 !important;
+}
+
+/* Focus states */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb !important;
+}
+
+/* Adjust font size for better readability */
 html {
-  font-size: 14px;
+    font-size: 14px !important;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px !important;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
+/* Body styling */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative !important;
+    min-height: 100% !important;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px !important;
 }

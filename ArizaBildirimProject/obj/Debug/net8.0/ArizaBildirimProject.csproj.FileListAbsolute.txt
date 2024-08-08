@@ -252,3 +252,8 @@ C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\obj\Debug\net8.0\Ari
 C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\obj\Debug\net8.0\ArizaBildirimProject.genruntimeconfig.cache
 C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\obj\Debug\net8.0\ref\ArizaBildirimProject.dll
 C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\obj\Debug\net8.0\ArizaBildirimProject.sourcelink.json
+C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\bin\Debug\net8.0\X.PagedList.dll
+C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\bin\Debug\net8.0\X.Web.PagedList.dll
+C:\Users\HP\source\repos\ArizaBildirim\ArizaBildirimProject\obj\Debug\net8.0\ArizaBildirimProject.MvcApplicationPartsAssemblyInfo.cs

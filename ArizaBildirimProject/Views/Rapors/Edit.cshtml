@@ -10,18 +10,32 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form id="edit-form" asp-action="Edit" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" id="StatuId" name="StatuId" value="3" /> <!-- Tamamlandı statüsünün ID'si -->
+
             <div class="form-group">
-                <label asp-for="DepartmanId" class="control-label"></label>
-                <select asp-for="DepartmanId" class="form-control" asp-items="ViewBag.DepartmanId"></select>
-                <span asp-validation-for="DepartmanId" class="text-danger"></span>
+                <label asp-for="DepartmanId" class="control-label">Departman</label>
+                <input type="text" class="form-control" value="@Model.Departman?.Name" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="BolumId" class="control-label"></label>
-                <select asp-for="BolumId" class="form-control" asp-items="ViewBag.BolumId"></select>
-                <span asp-validation-for="BolumId" class="text-danger"></span>
+                <label asp-for="BolumId" class="control-label">Bölüm</label>
+                <input type="text" class="form-control" value="@Model.Bolum?.Name" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="CihazId" class="control-label">Cihaz</label>
+                <input type="text" class="form-control" value="@Model.Cihaz?.Name" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArizaTurId" class="control-label">Arıza Türü</label>
+                <select asp-for="ArizaTurId" class="form-control" asp-items="ViewBag.ArizaTurId"></select>
+                <span asp-validation-for="ArizaTurId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArizaKisaTanimId" class="control-label">Arıza Kısa Tanım</label>
+                <select asp-for="ArizaKisaTanimId" class="form-control" asp-items="ViewBag.ArizaKisaTanimId"></select>
+                <span asp-validation-for="ArizaKisaTanimId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -35,5 +49,14 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            $('#edit-form').on('submit', function () {
+                $('#StatuId').val('3'); 
+            });
+        });
+    </script>
 }

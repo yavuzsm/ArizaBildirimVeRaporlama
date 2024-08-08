@@ -5,7 +5,7 @@
 namespace ArizaBildirimProject.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigration : Migration
+    public partial class FM : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -47,6 +47,19 @@ namespace ArizaBildirimProject.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roller", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Statuler",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Statuler", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -147,7 +160,8 @@ namespace ArizaBildirimProject.Migrations
                     BolumId = table.Column<int>(type: "int", nullable: false),
                     CihazId = table.Column<int>(type: "int", nullable: false),
                     ArizaKisaTanimId = table.Column<int>(type: "int", nullable: false),
-                    ArizaTurId = table.Column<int>(type: "int", nullable: false)
+                    ArizaTurId = table.Column<int>(type: "int", nullable: false),
+                    StatuId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -182,6 +196,12 @@ namespace ArizaBildirimProject.Migrations
                         principalTable: "Departman",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Rapor_Statuler_StatuId",
+                        column: x => x.StatuId,
+                        principalTable: "Statuler",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -198,26 +218,6 @@ namespace ArizaBildirimProject.Migrations
                     table.PrimaryKey("PK_Aktiviteler", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Aktiviteler_Rapor_RaporId",
-                        column: x => x.RaporId,
-                        principalTable: "Rapor",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Statuler",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RaporId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Statuler", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Statuler_Rapor_RaporId",
                         column: x => x.RaporId,
                         principalTable: "Rapor",
                         principalColumn: "Id",
@@ -290,9 +290,9 @@ namespace ArizaBildirimProject.Migrations
                 column: "DepartmanId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Statuler_RaporId",
-                table: "Statuler",
-                column: "RaporId");
+                name: "IX_Rapor_StatuId",
+                table: "Rapor",
+                column: "StatuId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Teshisler_RaporId",
@@ -317,9 +317,6 @@ namespace ArizaBildirimProject.Migrations
                 name: "Aktiviteler");
 
             migrationBuilder.DropTable(
-                name: "Statuler");
-
-            migrationBuilder.DropTable(
                 name: "Teshisler");
 
             migrationBuilder.DropTable(
@@ -336,6 +333,9 @@ namespace ArizaBildirimProject.Migrations
 
             migrationBuilder.DropTable(
                 name: "Cihaz");
+
+            migrationBuilder.DropTable(
+                name: "Statuler");
 
             migrationBuilder.DropTable(
                 name: "ArizaTurler");

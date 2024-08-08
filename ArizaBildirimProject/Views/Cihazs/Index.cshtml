@@ -1,43 +1,61 @@
-﻿@model IEnumerable<ArizaBildirimProject.Models.Cihaz>
+﻿@model X.PagedList.IPagedList<ArizaBildirimProject.Models.Cihaz>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-
 <p>
     <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Bolum)
-            </th>
-            <th>
-                <p>Cihaz</p>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            
+            <th>@Html.DisplayNameFor(model => model.First().Bolum)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Name)</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Bolum.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Bolum.Name)
-                </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-           
-            <td>
                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Edit</a>
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-            </td>
-        </tr>
-}
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<div class="pagination">
+    @if (Model.PageCount > 1)
+    {
+        <ul class="pagination">
+            @if (Model.HasPreviousPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.PageNumber - 1)">Previous</a>
+                </li>
+            }
+
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@i">@i</a>
+                </li>
+            }
+
+            @if (Model.HasNextPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.PageNumber + 1)">Next</a>
+                </li>
+            }
+        </ul>
+    }
+</div>

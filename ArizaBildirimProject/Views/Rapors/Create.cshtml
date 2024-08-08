@@ -4,54 +4,95 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Rapor Oluştur</h2>
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label for="DepartmentId">Departman</label>
-        <select id="DepartmentId" name="DepartmanId" class="form-control" onchange="fetchBolums(this.value)">
-            <option value="">-- Seçiniz --</option>
-            @foreach (var department in ViewBag.Departments)
-            {
-                <option value="@department.Value">@department.Text</option>
-            }
-        </select>
+    .form-group select {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .form-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .submit-btn {
+        display: flex;
+        justify-content: center; 
+        margin-top: 30px; 
+    }
+
+        .submit-btn button {
+            min-width: 200px; 
+        }
+</style>
+
+<div class="container">
+    <div class="form-container">
+        <h2 class="form-header">Rapor Oluştur</h2>
+
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label for="DepartmentId">Departman</label>
+                <select id="DepartmentId" name="DepartmanId" class="form-control" onchange="fetchBolums(this.value)">
+                    <option value="">-- Seçiniz --</option>
+                    @foreach (var department in ViewBag.Departments)
+                    {
+                        <option value="@department.Value">@department.Text</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="BolumId">Bölüm</label>
+                <select id="BolumId" name="BolumId" class="form-control" onchange="fetchCihazlar(this.value)">
+                    <option value="">-- Seçiniz --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="CihazId">Cihaz</label>
+                <select id="CihazId" name="CihazId" class="form-control">
+                    <option value="">-- Seçiniz --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ArizaTurId">Arıza Türü</label>
+                <select id="ArizaTurId" name="ArizaTurId" class="form-control" onchange="fetchAkt(this.value)">
+                    <option value="">-- Seçiniz --</option>
+                    @foreach (var arizaTur in ViewBag.ArizaTurler)
+                    {
+                        <option value="@arizaTur.Value">@arizaTur.Text</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ArizaKisaTanimId">Arıza Kısa Tanımı</label>
+                <select id="ArizaKisaTanimId" name="ArizaKisaTanimId" class="form-control">
+                    <option value="">-- Seçiniz --</option>
+                </select>
+            </div>
+
+            <div class="submit-btn">
+                <button type="submit" class="btn btn-primary">Raporla</button>
+            </div>
+        </form>
     </div>
-
-    <div class="form-group">
-        <label for="BolumId">Bölüm</label>
-        <select id="BolumId" name="BolumId" class="form-control" onchange="fetchCihazlar(this.value)">
-            <option value="">-- Seçiniz --</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="CihazId">Cihaz</label>
-        <select id="CihazId" name="CihazId" class="form-control">
-            <option value="">-- Seçiniz --</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="ArizaTurId">Arıza Türü</label>
-        <select id="ArizaTurId" name="ArizaTurId" class="form-control" onchange="fetchAkt(this.value)">
-            <option value="">-- Seçiniz --</option>
-            @foreach (var arizaTur in ViewBag.ArizaTurler)
-            {
-                <option value="@arizaTur.Value">@arizaTur.Text</option>
-            }
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="ArizaKisaTanimId">Arıza Kısa Tanımı</label>
-        <select id="ArizaKisaTanimId" name="ArizaKisaTanimId" class="form-control">
-            <option value="">-- Seçiniz --</option>
-        </select>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Raporla</button>
-</form>
+</div>
 
 @section Scripts {
     <script type="text/javascript">

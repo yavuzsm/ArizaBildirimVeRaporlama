@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ArizaBildirimProject.Models;
 using ArizaBildirimProject.Data;
+using X.PagedList;
+
 
 namespace ArizaBildirimProject.Controllers
 {
@@ -19,14 +21,16 @@ namespace ArizaBildirimProject.Controllers
             _context = context;
         }
 
-        // GET: Cihazs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
-            var applicationDbContext = _context.Cihaz.Include(c => c.Bolum);
-            return View(await applicationDbContext.ToListAsync());
+            var cihazlar = _context.Cihaz
+                .Include(c => c.Bolum)
+                .AsNoTracking()
+                .OrderBy(c => c.Name);
+
+            return await Paginate(cihazlar, page);
         }
 
-        // GET: Cihazs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -75,7 +79,6 @@ namespace ArizaBildirimProject.Controllers
             return View(cihaz);
         }
 
-        // GET: Cihazs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -92,9 +95,7 @@ namespace ArizaBildirimProject.Controllers
             return View(cihaz);
         }
 
-        // POST: Cihazs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,BolumId")] Cihaz cihaz)
@@ -128,7 +129,6 @@ namespace ArizaBildirimProject.Controllers
             return View(cihaz);
         }
 
-        // GET: Cihazs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -147,7 +147,6 @@ namespace ArizaBildirimProject.Controllers
             return View(cihaz);
         }
 
-        // POST: Cihazs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

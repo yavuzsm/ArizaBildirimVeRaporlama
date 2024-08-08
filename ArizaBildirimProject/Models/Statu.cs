@@ -8,7 +8,6 @@ namespace ArizaBildirimProject.Models
         [Required]
         public string Name { get; set; } = "";
 
-        public int RaporId { get; set; }
-        public Rapor? Rapor { get; set; }
+
     }
 }

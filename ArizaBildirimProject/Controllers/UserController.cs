@@ -8,6 +8,7 @@ using System.Linq;
 using ArizaBildirimProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 public class UserController : Controller
 {
@@ -85,4 +86,29 @@ public class UserController : Controller
         }
         return View(model);
     }
+
+    [HttpGet]
+    public async Task<IActionResult> Profile()
+    {
+        var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (int.TryParse(userIdString, out int userId))
+        {
+            var user = await _context.Users
+                .Include(u => u.Role) 
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(user);
+        }
+        else
+        {
+            return NotFound();
+        }
+    }
+
+
 }

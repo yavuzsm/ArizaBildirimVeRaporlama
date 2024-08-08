@@ -167,8 +167,17 @@ namespace ArizaBildirimProject.Migrations
                     b.Property<int>("CihazId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("DepartmanId")
                         .HasColumnType("int");
+
+                    b.Property<int>("StatuId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -181,6 +190,8 @@ namespace ArizaBildirimProject.Migrations
                     b.HasIndex("CihazId");
 
                     b.HasIndex("DepartmanId");
+
+                    b.HasIndex("StatuId");
 
                     b.ToTable("Rapor");
                 });
@@ -214,12 +225,7 @@ namespace ArizaBildirimProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RaporId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("RaporId");
 
                     b.ToTable("Statuler");
                 });
@@ -359,6 +365,12 @@ namespace ArizaBildirimProject.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("ArizaBildirimProject.Models.Statu", "Statu")
+                        .WithMany()
+                        .HasForeignKey("StatuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("ArizaKisaTanim");
 
                     b.Navigation("ArizaTur");
@@ -368,17 +380,8 @@ namespace ArizaBildirimProject.Migrations
                     b.Navigation("Cihaz");
 
                     b.Navigation("Departman");
-                });
 
-            modelBuilder.Entity("ArizaBildirimProject.Models.Statu", b =>
-                {
-                    b.HasOne("ArizaBildirimProject.Models.Rapor", "Rapor")
-                        .WithMany()
-                        .HasForeignKey("RaporId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Rapor");
+                    b.Navigation("Statu");
                 });
 
             modelBuilder.Entity("ArizaBildirimProject.Models.Teshis", b =>
