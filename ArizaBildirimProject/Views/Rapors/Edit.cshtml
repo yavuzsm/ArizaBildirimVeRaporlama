@@ -4,16 +4,15 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Raporu Düzenle</h1>
 
-<h4>Rapor</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form id="edit-form" asp-action="Edit" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <input type="hidden" id="StatuId" name="StatuId" value="3" /> <!-- Tamamlandı statüsünün ID'si -->
+            <input type="hidden" id="StatuId" name="StatuId" value="3" />
 
             <div class="form-group">
                 <label asp-for="DepartmanId" class="control-label">Departman</label>
@@ -38,14 +37,15 @@
                 <span asp-validation-for="ArizaKisaTanimId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+               
+                <button type="button" id="tamamlandi-btn" class="btn btn-success" style="margin-left: 10px;">Tamamlandı</button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Listeye Dön</a>
 </div>
 
 @section Scripts {
@@ -54,8 +54,11 @@
     }
     <script>
         $(document).ready(function () {
-            $('#edit-form').on('submit', function () {
+            
+
+            $('#tamamlandi-btn').on('click', function () {
                 $('#StatuId').val('3'); 
+                $('#edit-form').submit();
             });
         });
     </script>

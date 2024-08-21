@@ -39,10 +39,13 @@ public class UserController : Controller
         }
 
         var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, user.Username),
-            new Claim("FullName", user.Username)
-        };
+{
+    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+    new Claim(ClaimTypes.Name, user.Username),
+    new Claim("FullName", user.Username),
+    new Claim("Id", user.Id.ToString()), 
+};
+
 
         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
@@ -53,7 +56,7 @@ public class UserController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Logout()
+    public async Task<IActionResult> Logout()   
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         return RedirectToAction("Login", "User");
@@ -90,11 +93,11 @@ public class UserController : Controller
     [HttpGet]
     public async Task<IActionResult> Profile()
     {
-        var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        string userIdString = User.FindFirstValue("Id"); 
         if (int.TryParse(userIdString, out int userId))
         {
             var user = await _context.Users
-                .Include(u => u.Role) 
+                .Include(u => u.Role)
                 .FirstOrDefaultAsync(u => u.Id == userId);
 
             if (user == null)
@@ -109,6 +112,39 @@ public class UserController : Controller
             return NotFound();
         }
     }
+
+    [HttpPost]
+    public async Task<IActionResult> UploadProfilePicture(IFormFile ProfilePicture)
+    {
+        if (ProfilePicture != null && ProfilePicture.Length > 0)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _context.Users.FindAsync(int.Parse(userId));
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var fileName = $"{userId}_{ProfilePicture.FileName}";
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await ProfilePicture.CopyToAsync(stream);
+            }
+
+            user.ProfilePicturePath = $"/images/{fileName}";
+            _context.Update(user);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Profile");
+        }
+
+        return View("Profile");
+    }
+
+
 
 
 }

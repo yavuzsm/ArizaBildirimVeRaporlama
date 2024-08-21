@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArizaBildirimProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05adfa9977ecc0529aae859dbf3b84fb03a86dac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a5a327f5b28ab814203c70129cc8abff917abca")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArizaBildirimProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArizaBildirimProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

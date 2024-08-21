@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="ToDoList\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>

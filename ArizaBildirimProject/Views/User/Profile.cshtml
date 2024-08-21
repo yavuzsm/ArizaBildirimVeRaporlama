@@ -1,10 +1,4 @@
-﻿@model ArizaBildirimProject.Models.User
-
-@{
-    ViewData["Title"] = "Profile";
-}
-
-<h2>User Profile</h2>
+﻿<h2>User Profile</h2>
 
 <dl class="row">
     <dt class="col-sm-2">User ID</dt>
@@ -15,6 +9,25 @@
 
     <dt class="col-sm-2">Role</dt>
     <dd class="col-sm-10">@Model.Role.Name</dd>
+
+    <dt class="col-sm-2">Profile Picture</dt>
+    <dd class="col-sm-10">
+        @if (!string.IsNullOrEmpty(Model.ProfilePicturePath))
+        {
+            <img src="@Url.Content(Model.ProfilePicturePath)" alt="Profile Picture" width="150" height="150" class="rounded-circle" />
+        }
+        else
+        {
+            <span>No Profile Picture</span>
+        }
+    </dd>
 </dl>
 
-<a asp-action="Index" class="btn btn-primary">Back to List</a>
+<form asp-action="UploadProfilePicture" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="ProfilePicture">Upload New Profile Picture</label>
+        <input type="file" name="ProfilePicture" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+

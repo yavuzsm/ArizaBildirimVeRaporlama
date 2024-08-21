@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\HP\\source\\repos\\ArizaBildirim\\ArizaBildirimProject\\wwwroot\\images\\1_1638652501009.jpg",
+      "PackagePath": "staticwebassets\\images\\1_1638652501009.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\source\\repos\\ArizaBildirim\\ArizaBildirimProject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

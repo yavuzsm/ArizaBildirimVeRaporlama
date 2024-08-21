@@ -237,10 +237,9 @@ namespace ArizaBildirimProject.Controllers
             return View(rapor);
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, BolumId, ArizaTurId, ArizaKisaTanimId, ... ")] Rapor rapor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, StatuId")] Rapor rapor)
         {
             if (id != rapor.Id)
             {
@@ -251,7 +250,7 @@ namespace ArizaBildirimProject.Controllers
             {
                 try
                 {
-                    _context.Update(rapor);
+                    _context.Entry(rapor).Property(r => r.StatuId).IsModified = true; 
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -268,12 +267,9 @@ namespace ArizaBildirimProject.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["BolumId"] = new SelectList(_context.Bolum, "Id", "Name", rapor.BolumId);
-            ViewData["ArizaTurId"] = new SelectList(_context.ArizaTurler, "Id", "Name", rapor.ArizaTurId);
-            ViewData["ArizaKisaTanimId"] = new SelectList(_context.ArizaKisaTanimlar, "Id", "Name", rapor.ArizaKisaTanimId);
-
             return View(rapor);
         }
+
 
 
 

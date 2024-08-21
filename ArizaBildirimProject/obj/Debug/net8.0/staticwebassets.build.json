@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FHRBU7FU1LWOYnHAd+m8RXdj000530iJ1xJNFIp1CuE=",
+  "Hash": "wUWpf0ofxVCLCEmKYWZ48s5KWTMT0vE1I+GAO5e3L+o=",
   "Source": "ArizaBildirimProject",
   "BasePath": "_content/ArizaBildirimProject",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\ArizaBildirim\\ArizaBildirimProject\\wwwroot\\images\\1_1638652501009.jpg",
+      "SourceId": "ArizaBildirimProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\ArizaBildirim\\ArizaBildirimProject\\wwwroot\\",
+      "BasePath": "_content/ArizaBildirimProject",
+      "RelativePath": "images/1_1638652501009.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\1_1638652501009.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\source\\repos\\ArizaBildirim\\ArizaBildirimProject\\wwwroot\\js\\site.js",
